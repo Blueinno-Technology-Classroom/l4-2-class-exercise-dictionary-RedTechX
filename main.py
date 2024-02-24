@@ -110,11 +110,10 @@ Q6:
 '''
 
 # TODO: Write your code here
-student_grades = {}
 
-for s in student_scores:
+
+def give_grade(score: int) -> str:
     grade = 'Fail'
-    score = student_scores[s]
     if score > 90:
         grade = 'Outstanding'
     elif score > 80:
@@ -122,10 +121,10 @@ for s in student_scores:
     elif score > 70:
         grade = 'Acceptable'
     
-    student_grades[s] = grade
+    return grade
 
 print()
-print_dict(student_grades)
+print_dict({s : give_grade(student_scores[s]) for s in student_scores})
 ##################################################
 '''
 Q7:
@@ -133,14 +132,17 @@ Q7:
 keys = ['Harry', 'Ron', 'Hermione']
 values = ['B+', 'C-', 'A++']
 
-student_marks = {}
+
 
 # TODO: Write your code here
 
-for i in range(len(keys)):
-    k = keys[i]
-    v = values[i]
-    student_marks[k] = v
+# student_marks = {}
+# for i in range(len(keys)):
+#     k = keys[i]
+#     v = values[i]
+#     student_marks[k] = v
+
+student_marks = {k : v for k, v in zip(keys, values)}
 
 print_dict(student_marks)
 ##################################################
