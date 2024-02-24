@@ -27,6 +27,7 @@ moneymoney = {
 }
 
 moneymoney['emp3']['salary'] = 8500
+print(moneymoney['emp3']['salary'])
 ##################################################
 '''
 Q3:
